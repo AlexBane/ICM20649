@@ -30,13 +30,8 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "em_usart.h"
-#include "em_gpio.h"
-#include "em_cmu.h"
 
-#include "thunderboard/util.h"
-#include "thunderboard/board.h"
-#include "thunderboard/ICM20649.h"
+#include "ICM20649.h"
 
 /**************************************************************************//**
 * @addtogroup TBSense_BSP
