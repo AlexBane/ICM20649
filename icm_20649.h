@@ -27,11 +27,12 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
+ 
 #ifndef ICM20649_H
 #define ICM20649_H
 
 #include <stdint.h>
-#include "icm20649_config.h"
+#include "icm_20649_config.h"
 
 /**************************************************************************//**
 * @addtogroup TBSense_BSP
@@ -75,14 +76,14 @@
 #define ICM20649_REG_USER_CTRL           	(ICM20649_BANK_0 | 0x03)    /**< User control register                                  */
 #define ICM20649_BIT_DMP_EN              	0x80                        /**< DMP enable bit                                         */
 #define ICM20649_BIT_FIFO_EN             	0x40                        /**< FIFO enable bit                                        */
-#define ICM20649_BIT_I2C_MST_EN          	0x20                        /**< I2C master I/F enable bit                              */
-#define ICM20649_BIT_I2C_IF_DIS          	0x10                        /**< Disable I2C, enable SPI bit                            */
+#define ICM20649_BIT_I2C_MST_EN          	0x00                        /**< I2C master disabled                                    */
+#define ICM20649_BIT_I2C_IF_DIS          	0x00                        /**< Enable I2C, disable SPI bit                            */
 #define ICM20649_BIT_DMP_RST             	0x08                        /**< DMP module reset bit                                   */
 #define ICM20649_BIT_DIAMOND_DMP_RST     	0x04                        /**< SRAM module reset bit                                  */
 
 #define ICM20649_REG_LP_CONFIG           	(ICM20649_BANK_0 | 0x05)    /**< Low Power mode config register                         */
-#define ICM20649_BIT_I2C_MST_CYCLE       	0x40                        /**< I2C master cycle mode enable                           */
-#define ICM20649_BIT_ACCEL_CYCLE         	0x20                        /**< Accelerometer cycle mode enable                        */
+#define ICM20649_BIT_I2C_MST_CYCLE       	0x00                        /**< I2C master cycle mode disable                          */
+#define ICM20649_BIT_ACCEL_CYCLE         	0x00                        /**< Accelerometer cycle mode disable                       */
 #define ICM20649_BIT_GYRO_CYCLE          	0x10                        /**< Gyroscope cycle mode enable                            */
 
 #define ICM20649_REG_PWR_MGMT_1          	(ICM20649_BANK_0 | 0x06)    /**< Power Management 1 register                            */
@@ -99,7 +100,7 @@
 
 #define ICM20649_REG_INT_PIN_CFG         	(ICM20649_BANK_0 | 0x0F)    /**< Interrupt Pin Configuration register                   */
 #define ICM20649_BIT_INT_ACTL            	0x80                        /**< Active low setting bit                                 */
-#define ICM20649_BIT_INT_OPEN            	0x40                        /**< Open collector onfiguration bit                        */
+#define ICM20649_BIT_INT_OPEN            	0x40                        /**< Open collector configuration bit                        */
 #define ICM20649_BIT_INT_LATCH_EN        	0x20                        /**< Latch enable bit                                       */
 
 #define ICM20649_REG_INT_ENABLE          	(ICM20649_BANK_0 | 0x10)    /**< Interrupt Enable register                              */
@@ -299,7 +300,7 @@
 /** @endcond */
 
 
-uint32_t    ICM20649_spiInit(void);
+uint32_t    ICM20649_i2cInit(void);
 void        ICM20649_registerRead(uint16_t addr, int numBytes, uint8_t *data);
 void        ICM20649_registerWrite(uint16_t addr, uint8_t data);
 void        ICM20649_bankSelect(uint8_t bank);
