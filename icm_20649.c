@@ -63,7 +63,7 @@ uint32_t ICM20649_init(void)
 {
   uint8_t data;
 
-  /* Enable and setup the SPI bus */
+  /* Enable and setup I2C */
   ICM20649_i2cInit();
 
   /* Issue reset */
