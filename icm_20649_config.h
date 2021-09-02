@@ -43,7 +43,4 @@
     i2cClockHLRStandard,       /* Set to use 4:4 low/high duty cycle       */ \
   }
 
-#define sclPin 21
-#define sdaPin 22
-
 #endif /* ICM20649_CONFIG_H_ */
