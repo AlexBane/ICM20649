@@ -69,7 +69,7 @@ uint32_t ICM20649_init(void)
   /* Issue reset */
   ICM20649_reset();
 
-  /* Disable I2C interface, use SPI */
+  /* Disable SPI interface, use I2C */
   ICM20649_registerWrite(ICM20649_REG_USER_CTRL, ICM20649_BIT_I2C_IF_DIS);
 
   /* Read Who am I register, should get 0xe1 */
