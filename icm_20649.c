@@ -94,22 +94,6 @@ uint32_t ICM20649_init(void)
 
 /***************************************************************************//**
  * @brief
- *    De-initializes the ICM20649 sensor by disconnecting the supply and SPI
- *    lines.
- *
- * @return
- *    Returns zero on OK, non-zero otherwise
- ******************************************************************************/
-uint32_t ICM20649_deInit(void)
-{
-  /* Disable the chip */
-  BOARD_imuEnable(false);
-
-  return ICM20649_OK;
-}
-
-/***************************************************************************//**
- * @brief
  *    Performs soft reset on the ICM20649 chip
  *
  * @return
