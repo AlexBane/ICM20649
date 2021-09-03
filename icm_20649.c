@@ -328,7 +328,7 @@ uint32_t ICM20649_cycleModeEnable(bool enable)
   reg = 0x00;
 
   if ( enable ) {
-    reg = ICM20649_BIT_ACCEL_CYCLE | ICM20649_BIT_GYRO_CYCLE;
+    reg = ICM20649_BIT_GYRO_CYCLE;
   }
 
   ICM20649_registerWrite(ICM20649_REG_LP_CONFIG, reg);
