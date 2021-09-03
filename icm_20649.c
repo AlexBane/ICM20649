@@ -630,7 +630,7 @@ uint32_t ICM20649_gyroCalibrate(float *gyroBiasScaled)
   /* The gyro bias should be stored in 1000dps full scaled format. We measured in 500dps to get */
   /* the best sensitivity, so need to divide by 2 */
   /* Substract from the stored calibration value */
-  gyroBiasStored[0] -= gyroBias[0] / 4;
+  gyroBiasStored[0] -= gyroBias[0] / 2;
 
 
   /* Split the values into two bytes */
