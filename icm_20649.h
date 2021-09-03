@@ -307,14 +307,9 @@ void        ICM20649_bankSelect(uint8_t bank);
 uint32_t    ICM20649_reset(void);
 uint32_t    ICM20649_sampleRateSet(float sampleRate);
 float       ICM20649_gyroSampleRateSet(float sampleRate);
-float       ICM20649_accelSampleRateSet(float sampleRate);
 uint32_t    ICM20649_gyroBandwidthSet(uint8_t gyroBw);
-uint32_t    ICM20649_accelBandwidthSet(uint8_t accelBw);
-uint32_t    ICM20649_accelDataRead(float *accel);
 uint32_t    ICM20649_gyroDataRead(float *gyro);
-uint32_t    ICM20649_accelResolutionGet(float *accelRes);
 uint32_t    ICM20649_gyroResolutionGet(float *gyroRes);
-uint32_t    ICM20649_accelFullscaleSet(uint8_t accelFs);
 uint32_t    ICM20649_gyroFullscaleSet(uint8_t gyroFs);
 uint32_t    ICM20649_sleepModeEnable(bool enable);
 uint32_t    ICM20649_cycleModeEnable(bool enable);
@@ -323,12 +318,7 @@ uint32_t    ICM20649_lowPowerModeEnter(bool enAccel, bool enGyro, bool enTemp);
 uint32_t    ICM20649_interruptEnable(bool dataReadyEnable, bool womEnable);
 uint32_t    ICM20649_interruptStatusRead(uint32_t *int_status);
 bool        ICM20649_isDataReady(void);
-uint32_t    ICM20649_wakeOnMotionITEnable(bool enable, uint8_t womThreshold, float sampleRate);
-uint32_t    ICM20649_init(void);
-uint32_t    ICM20649_deInit(void);
-uint32_t    ICM20649_accelGyroCalibrate(float *accelBiasScaled, float *gyroBiasScaled);
 uint32_t    ICM20649_gyroCalibrate(float *gyroBiasScaled);
-uint32_t    ICM20649_temperatureRead(float *temperature);
 uint32_t    ICM20649_getDeviceID(uint8_t *devID);
 
 /** @} */
